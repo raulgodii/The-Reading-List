@@ -62,6 +62,18 @@ class BookList{
         return `${day}-${month}-${year}-${minutes}:${seconds}`;
     }
 
+    nbooks(){
+        return this.books.length;
+    }
+
+    nReads(){
+        cont = 0;
+        for(this.books of val){
+            if(val.read) cont++;
+        }
+        return cont;
+    }
+
 }
 
 class Book{

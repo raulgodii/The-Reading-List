@@ -17,6 +17,7 @@ function addBook(e){
     bookList.add(book);
 
     showBook();
+    showReads();
 
     title.value = "";
     author.value = "";
@@ -52,4 +53,13 @@ function showBook(){
     p1.appendChild(h4);
 
     List.appendChild(row);
+}
+
+function showReads(){
+    let reads = document.getElementById("reads");
+
+    let nreads = 0;
+    let nbooks = bookList.nbooks();
+
+    reads.innerHTML = "Books Read: " + "0" + " of " + nbooks;
 }
