@@ -3,6 +3,7 @@ window.onload = () => {
     author = document.getElementById("author");
     genre = document.getElementById("genre");
     btn = document.getElementById("btn");
+    error = document.getElementById("error");
 
     bookList = new BookList();
 
@@ -13,16 +14,22 @@ window.onload = () => {
 function addBook(e){
     e.preventDefault();
 
-    book = new Book(title.value, author.value, genre.value);
+    if(title.value!="" && author.value!="" && genre.value!=""){
+        book = new Book(title.value, author.value, genre.value);
     
-    bookList.add(book);
-
-    showBook();
-    showReads();
-
-    title.value = "";
-    author.value = "";
-    genre.value = "";
+        bookList.add(book);
+    
+        showBook();
+        showReads();
+    
+        title.value = "";
+        author.value = "";
+        genre.value = "";
+        error.innerHTML = "";
+    }else{
+        error.innerHTML = "Introduce todos los datos";
+    }
+    
 }
 
 function showBook(){

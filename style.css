@@ -186,6 +186,10 @@ form{
     margin: 5px 0px;
 }
 
+#error{
+    color: red;
+}
+
 @media screen and (max-width: 525px){
     .authorGenre{
         flex-direction: column;
