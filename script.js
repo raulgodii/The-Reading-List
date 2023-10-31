@@ -7,6 +7,7 @@ window.onload = () => {
     bookList = new BookList();
 
     btn.addEventListener("click", addBook);
+
 }
 
 function addBook(e){
@@ -28,6 +29,7 @@ function showBook(){
     let List = document.getElementById("List");
     let row = document.createElement("div");
     row.setAttribute("class", "row");
+    row.id = bookList.nbooks()-1;
 
     let p1 = document.createElement("div");
     p1.setAttribute("class", "p1");
@@ -39,6 +41,7 @@ function showBook(){
     pgenre.innerHTML = genre.value;
 
     let p = document.createElement("p");
+    p.className = "read";
     row.appendChild(p);
     p.innerHTML = "Not Read";
 
@@ -53,13 +56,23 @@ function showBook(){
     p1.appendChild(h4);
 
     List.appendChild(row);
+
+    row.addEventListener("click", readBook);
 }
 
 function showReads(){
     let reads = document.getElementById("reads");
 
-    let nreads = 0;
+    let nreads = bookList.nReads();
     let nbooks = bookList.nbooks();
 
-    reads.innerHTML = "Books Read: " + "0" + " of " + nbooks;
+    reads.innerHTML = "Books Read: " + nreads + " of " + nbooks;
+}
+
+function readBook(e){
+    let read = e.target.querySelector(".read")
+    let id = e.target.id;
+    bookList.readBook(id);
+    read.innerHTML = bookList.getDate(id);
+    showReads();
 }

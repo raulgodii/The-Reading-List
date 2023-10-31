@@ -67,16 +67,43 @@ class BookList{
     }
 
     nReads(){
-        cont = 0;
-        for(this.books of val){
-            if(val.read) cont++;
+        let cont = 0;
+        for(let book of this.books){
+            if(book.read) cont++;
         }
         return cont;
+    }
+
+    getDate(n){
+        console.log("Libro " + n + "::::>> " + this.books[n].readDate);
+        return this.formatoFecha(this.books[n].readDate);
+    }
+
+    formatoFecha(milisegundos) {
+        const fecha = new Date(milisegundos);
+    
+        const dia = fecha.getDate();
+        const mes = fecha.getMonth() + 1; // Los meses son indexados desde 0
+        const año = fecha.getFullYear();
+        const horas = fecha.getHours();
+        const minutos = fecha.getMinutes();
+        const segundos = fecha.getSeconds();
+    
+        // Formatea el resultado como una cadena
+        const fechaFormateada = `${dia}/${mes}/${año} ${horas}:${minutos}:${segundos}`;
+    
+        return fechaFormateada;
+    }
+
+    readBook(n){
+        this.books[n].readDate = Date.now();
+        this.books[n].read = true;
     }
 
 }
 
 class Book{
+    read;
     constructor(title, genre, author, readDate = null){
         this.title = title;
         this.genre = genre;
