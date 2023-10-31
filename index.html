@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>The Reading List</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
+    <script src="class.js"></script>
 </head>
 <body>
     <header>
@@ -31,29 +32,32 @@
                 
                 <div class="authorGenre">
                     <div class="author">
-                        <label for="title">Author</label>
-                        <input type="text" id="title">
+                        <label for="author">Author</label>
+                        <input type="text" id="author">
                     </div>
                     
                     <div class="genre">
-                        <label for="title">Genre</label>
-                        <input type="text" id="title">
+                        <label for="genre">Genre</label>
+                        <input type="text" id="genre">
                     </div>
                 </div>
 
-                <button class="btn">Add Book</button>
+                <button class="btn" id="btn">Add Book</button>
             </form>
         </section>
         <section class="readingList">
             <h2>My Reading List</h2>
-            <div class="row">
-                <div class="p1">
-                    <h3>Titulo</h3>
-                    <h4>Autor</h4>
+            <div id="List">
+                <div class="row">
+                    <div class="p1">
+                        <h3>Titulo</h3>
+                        <h4>Autor</h4>
+                    </div>
+                    <p class="pgenre">Genre</p>
+                    <p id="read">Not Read</p>
                 </div>
-                <p>Not Read</p>
             </div>
-            <p class="booksRead">Books Read: 0 of of</p>
+            <p class="booksRead">Books Read: 0 of 0</p>
         </section>
     </main>
 

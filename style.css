@@ -165,8 +165,17 @@ form{
     margin: 10px;
 }
 
+.p1 h4{
+    color: #495057;
+    font-size: 12px;
+}
+
 .row p{
     margin: 10px;
+}
+
+.pgenre{
+    color: #e9ecef;
 }
 
 .readingList h2{
