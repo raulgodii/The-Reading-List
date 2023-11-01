@@ -27,7 +27,7 @@ function addBook(e){
         genre.value = "";
         error.innerHTML = "";
     }else{
-        error.innerHTML = "Introduce todos los datos";
+        error.innerHTML = "Enter all data";
     }
     
 }
